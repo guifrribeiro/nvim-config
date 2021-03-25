@@ -35,6 +35,9 @@ set shiftwidth=2
 set expandtab
 set number
 set background=dark
+
+nnoremap <C-s> :w! <cr>
+nnoremap <C-q> :q! <cr>
 "nerdtree
 let NERDTreeShowHidden = 1
 let NERDTreeMinimalUI = 1
@@ -42,19 +45,10 @@ let NERDTreeDirArrows = 1
 let NERDTreeIgnore = []
 let NERDTreeStatusline = ''
 
+nnoremap <C-o> :NERDTreeToggle <cr>
+
 "nerdtree-git-plugin
-let g:NERDTreeGitStatusIndicatorMapCustom = {
-	\ "Modified"	: "✹",
-	\ "Staged"	: "+",
-	\ "Untracked" 	: "✭",
-    	\ "Renamed"   	: "➜",
-    	\ "Unmerged"  	: "═",
-    	\ "Deleted"   	: "✖",
-    	\ "Dirty"     	: "✗",
-    	\ "Clean"     	: "✔︎",
-    	\ 'Ignored'   	: '☒',
-    	\ "Unknown"   	: "?"
-    	\ }
+let g:NERDTreeUseSimpleIndicator = 1
 "fzf
 nnoremap <c-p> :Files<cr>
 
