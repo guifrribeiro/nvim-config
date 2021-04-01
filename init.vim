@@ -11,10 +11,13 @@ call plug#begin()
 	Plug 'preservim/nerdtree'
 	Plug 'ryanoasis/vim-devicons'
 	Plug 'Xuyuanp/nerdtree-git-plugin'
+  Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
 	Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 	Plug 'junegunn/fzf.vim'
   Plug 'dense-analysis/ale'
   Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'} "this is for auto complete, prettier and tslinting
+  Plug 'neoclie/coc-vetur'
   
   let g:coc_global_extensions = ['coc-tslint-plugin', 'coc-tsserver', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier'] "list of CoC extensions needed
 
@@ -38,6 +41,9 @@ set background=dark
 
 nnoremap <C-s> :w! <cr>
 nnoremap <C-q> :q! <cr>
+
+"airline-theme
+let g:airline_theme='simple'
 "nerdtree
 let NERDTreeShowHidden = 1
 let NERDTreeMinimalUI = 1
@@ -45,7 +51,7 @@ let NERDTreeDirArrows = 1
 let NERDTreeIgnore = []
 let NERDTreeStatusline = ''
 
-nnoremap <C-o> :NERDTreeToggle <cr>
+map <F2> :NERDTreeToggle <cr>
 
 "nerdtree-git-plugin
 let g:NERDTreeUseSimpleIndicator = 1
