@@ -8,7 +8,7 @@ endif
 
 call plug#begin()
 "Plugin section'
-	Plug 'preservim/nerdtree'
+  Plug 'preservim/nerdtree'
 	Plug 'ryanoasis/vim-devicons'
 	Plug 'Xuyuanp/nerdtree-git-plugin'
   Plug 'vim-airline/vim-airline'
@@ -16,17 +16,17 @@ call plug#begin()
 	Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 	Plug 'junegunn/fzf.vim'
   Plug 'dense-analysis/ale'
-  Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'} "this is for auto complete, prettier and tslinting
-  Plug 'neoclie/coc-vetur'
-  
-  let g:coc_global_extensions = ['coc-tslint-plugin', 'coc-tsserver', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-python'] "list of CoC extensions needed
-
+  Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile', 'branch': 'release'} "this is for auto complete, prettier and tslinting
+  Plug 'neoclie/coc-vetur', { 'branch': 'master' }
+  Plug 'HerringtonDarkholme/yats.vim'
+  Plug 'MaxMEllon/vim-jsx-pretty'
+  Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+  Plug 'prettier/vim-prettier'
+  Plug 'mattn/emmet-vim'
   Plug 'jiangmiao/auto-pairs' "this will auto close [ ( {
 
   "these two plugins will add highlighting and indenting to JSX and TSX files
-  Plug 'yuezk/vim-js'
-  Plug 'HerringtonDarkholme/yats.vim'
-  Plug 'maxmellon/vim-jsx-pretty'
+  Plug 'yuezk/vim-js' 
 call plug#end()
 
 "Config section
@@ -38,6 +38,7 @@ set shiftwidth=2
 set expandtab
 set number
 set background=dark
+let s:fontsize=12
 
 nnoremap <C-s> :w! <cr>
 nnoremap <C-q> :q! <cr>
@@ -68,12 +69,16 @@ let g:ale_sign_warning = '⚠'
 
 let g:coc_global_extensions = [
     \  'coc-snippets',
+    \  'coc-actions',
+    \  'coc-lists',
+    \  'coc-tsserver',
     \  'coc-emmet',
     \  'coc-html',
     \  'coc-css',
     \  'coc-json', 
     \  'coc-phpls',
     \  'coc-yaml',
+    \  'coc-vimlsp',
     \  'coc-prettier',
     \  'coc-eslint',
     \  'coc-jedi',
